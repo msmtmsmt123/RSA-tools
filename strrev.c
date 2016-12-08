@@ -1,7 +1,23 @@
+void strrevn(char* s, const int len)
+{
+    //h指向s的头部
+    char* h = s;
+    char* t = s + len - 1;
+    char ch;
+
+    //当h和t未重合时，交换它们所指向的字符
+    while (h < t)
+    {
+        ch = *h;
+        *h++ = *t;    //h向尾部移动
+        *t-- = ch;    //t向头部移动
+    }
+}
+
 char* strrev(char* s)
 {  
 	//h指向s的头部
-	char* h = s;
+	char* h = 0;
 	char* t = s;
 	char ch;
 
@@ -19,22 +35,6 @@ char* strrev(char* s)
 	}
 
 	return(s);
-}
-
-void strrevn(char* s, const int len)
-{  
-	//h指向s的头部
-	char* h = s;
-	char* t = s + len - 1;
-	char ch;
-
-	//当h和t未重合时，交换它们所指向的字符
-	while(h < t)
-	{
-		ch = *h;
-		*h++ = *t;    //h向尾部移动
-		*t-- = ch;    //t向头部移动
-	}
 }
 
 inline int IsBigEndian()      //大端字节序返回1， 小端返回0
