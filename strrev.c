@@ -37,12 +37,6 @@ void strrevn(char* s, const int len)
 	}
 }
 
-inline unsigned char convertInt2BCD(unsigned char value)   //整形数转换成8421BCD码
-{
-    //asdfasdf
-    return (unsigned char)(value + (value / 10) * 6);
-}
-
 inline int IsBigEndian()      //大端字节序返回1， 小端返回0
 {
 	int i = 1;
@@ -50,4 +44,7 @@ inline int IsBigEndian()      //大端字节序返回1， 小端返回0
 	return !p[0];
 }
 
-
+inline unsigned char convertInt2BCD(unsigned char value)   //整形数转换成8421BCD码
+{
+	return (unsigned char) (value + (value / 10) * 6);
+}
